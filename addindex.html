@@ -1,0 +1,23 @@
+
+// Take input from user
+let num1 = parseFloat(prompt("Enter first number:"));
+let num2 = parseFloat(prompt("Enter second number:"));
+let operator = prompt("Enter operator (add, sub, multiply):");
+
+// Perform operation using switch
+switch (operator) {
+    case "add":
+        console.log("Result: " + (num1 + num2));
+        break;
+
+    case "sub":
+        console.log("Result: " + (num1 - num2));
+        break;
+
+    case "multiply":
+        console.log("Result: " + (num1 * num2));
+        break;
+
+    default:
+        console.log("Invalid operator! Please use add, sub, or multiply.");
+}
