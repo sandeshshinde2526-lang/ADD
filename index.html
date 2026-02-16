@@ -1,23 +1,31 @@
+// Simple Calculator using Switch Case
+// Supports: add, sub, multiply
 
-// Take input from user
-let num1 = parseFloat(prompt("Enter first number:"));
-let num2 = parseFloat(prompt("Enter second number:"));
-let operator = prompt("Enter operator (add, sub, multiply):");
+// Get command line arguments
+// Example: node calculator.js 10 5 add
 
-// Perform operation using switch
+const num1 = parseFloat(process.argv[2]);
+const num2 = parseFloat(process.argv[3]);
+const operator = process.argv[4];
+
+if (isNaN(num1) || isNaN(num2)) {
+    console.log("Please provide valid numbers.");
+    process.exit(1);
+}
+
 switch (operator) {
     case "add":
-        console.log("Result: " + (num1 + num2));
+        console.log(`Result: ${num1 + num2}`);
         break;
 
     case "sub":
-        console.log("Result: " + (num1 - num2));
+        console.log(`Result: ${num1 - num2}`);
         break;
 
     case "multiply":
-        console.log("Result: " + (num1 * num2));
+        console.log(`Result: ${num1 * num2}`);
         break;
 
     default:
-        console.log("Invalid operator! Please use add, sub, or multiply.");
+        console.log("Invalid operator! Use: add, sub, multiply");
 }
